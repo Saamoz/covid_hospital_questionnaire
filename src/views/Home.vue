@@ -1,10 +1,8 @@
 <template>
     <div class="container">
         <div class="col-lg-9 jumbotron">
-            <h1>Welcome to the Survey</h1>
-            <p>
-                Test
-            </p>
+            <h2>KKESH COVID-19 Procedure</h2>
+            <a type="button" class="btn btn-primary btn-lg btn-block" href="/staff">Click Here if you are a Staff Member who was Directly Exposed</a>
         </div>
     </div>
 </template>
