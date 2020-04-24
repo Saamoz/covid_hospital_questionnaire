@@ -25,7 +25,6 @@
                     {   type: "dropdown",
                         name: "exposureType",
                         title: "How were you exposed?",
-                        isRequired: true,
                         choices: [
                             "Direct Exposure (Test Positive)",
                             "Indirect Exposure (Symptomatic)",
@@ -43,7 +42,6 @@
                         type: "dropdown",
                         name: "exposureType2",
                         title: "What type of exposure?",
-                        isRequired: true,
                         choices: [
                             "Test Positive",
                             "Test Negative"
@@ -66,7 +64,6 @@
                         type: "dropdown",
                         name: "testAgain",
                         title: "Test again",
-                        isRequired: true,
                         choices: [
                             "Test Positive",
                             "Test Negative"
