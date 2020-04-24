@@ -4,7 +4,10 @@
       <div class="container-fluid">
         <ul class="nav navbar-nav">
           <li>
-            <router-link to="/">Home</router-link>
+            <router-link to="/staff">Staff Direct Exposure Procedure</router-link>
+          </li>
+          <li>
+            <router-link to="/">Doctor Procedure</router-link>
           </li>
         </ul>
       </div>
@@ -20,13 +23,14 @@ import VueRouter from "vue-router";
 Vue.use(VueRouter)
 
 const Home = () => import("./views/Home.vue");
+const Staff = () => import("./views/Staff.vue");
 
 const router = new VueRouter({
   mode: "history",
   base: __dirname,
   routes: [
     { path: "/", component: Home},
-    { path: "/test", component: Home}
+    { path: "/staff", component: Staff}
   ]
 });
 
