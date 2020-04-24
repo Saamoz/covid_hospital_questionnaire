@@ -13,3 +13,9 @@
 
     export default {};
 </script>
+
+<style>
+    .btn {
+        white-space:normal !important;
+    }
+</style>
