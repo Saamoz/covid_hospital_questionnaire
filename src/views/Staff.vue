@@ -29,6 +29,7 @@
         },
         data () {
             var json = {
+                "showNavigationButtons": "none",
                 clearInvisibleValues: "onHidden",
                 completedHtml: completedHTML,
                 questions: [
