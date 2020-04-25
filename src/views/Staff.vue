@@ -13,13 +13,13 @@
     var Survey = SurveyVue.Survey
     Survey.cssType = "bootstrap";
 
-    const lessExposed = "<h4>Most likely you will need to:</h4> <ol> <li>Continue duties</li> <li>No test is required</li> <li>Active monitoring for 14 days</li> </ol>"
-    const moreExposed = "<h4>You will be assessed by an EH physician. Most likely you will need to:</h4> <ol> <li>Stop duties</li> <li>Test is required</li> <li>Isolation for 14 days</li> </ol>"
+    const lessExposed = "<h4>You may need:</h4> <ol> <li>Continue duties</li> <li>No test is required</li> <li>Active monitoring for 14 days</li> </ol>"
+    const moreExposed = "<h4>You will be assessed by an EH physician. You may need:</h4> <ol> <li>Stop duties</li> <li>Test is required</li> <li>Isolation for 14 days</li> </ol>"
 
 
-    const otherLessExposed1 = "<h4>The employee will be assessed by an EH physician. Most likely they will need to:</h4> <ol> <li>Continue duties</li> <li>No test is required</li> <li>Active monitoring for 14 days</li> </ol>"
+    const otherLessExposed1 = "<h4>The employee will be assessed by an EH physician. They may need:</h4> <ol> <li>Continue duties</li> <li>No test is required</li> <li>Active monitoring for 14 days</li> </ol>"
     const otherLessExposed2 = "<h4>Those employees will need to:</h4> <ol> <li>Continue duties</li> <li>No test is required</li> <li>Active monitoring for 14 days</li> </ol>"
-    const otherMoreExposed = "<h4>The employee will be assessed by an EH physician. Most likely they will need to:</h4> <ol> <li>Stop duties</li> <li>Test is required</li> <li>Isolation for 14 days</li> </ol>"
+    const otherMoreExposed = "<h4>The employee will be assessed by an EH physician. They may need:</h4> <ol> <li>Stop duties</li> <li>Test is required</li> <li>Isolation for 14 days</li> </ol>"
 
     export default {
         name: 'app',
@@ -52,7 +52,7 @@
                     {   type: "dropdown",
                         name: "negativeSymptoms",
                         title: "Are you experiencing any symptoms?",
-                        description: "Symptoms may include fever, cough, or shortness of breath",
+                        description: "Symptoms may include fever, cough, shortness of breath, nausea, or diarrhea",
                         choices: [
                             {value: 1, text: "Yes, I'm experiencing symptoms"},
                             {value: 2, text: "No, I'm not experiencing symptoms"}
@@ -73,8 +73,8 @@
                         name: "exposureRisk",
                         title: "Was your exposure low risk or high risk?",
                         choices: [
-                            {value: 1, text: "My exposure was low risk (e.g. contact < 20 mins, distance > 1.5m, wearing mask)"},
-                            {value: 2, text: "My exposure was high risk (e.g. contact > 20 mins, distance < 1.5m, not wearing mask)"}
+                            {value: 1, text: "My exposure was low risk (e.g. contact < 20 mins, distance > 1.5m, exposed with mask)"},
+                            {value: 2, text: "My exposure was high risk (e.g. contact > 20 mins, distance < 1.5m, exposed without mask)"}
                         ],
                         visibleIf: "{firstTest}='1'"
                     },
@@ -115,7 +115,7 @@
                     {   type: "dropdown",
                         name: "otherSymptoms",
                         title: "Do other employees exposed to you have any symptoms?",
-                        description: "Symptoms may include fever, cough, or shortness of breath",
+                        description: "Symptoms may include fever, cough, shortness of breath, nausea, or diarrhea",
                         choices: [
                             {value: 1, text: "Yes, they show symptoms"},
                             {value: 2, text: "No, they don't show any symptoms"}
@@ -136,8 +136,8 @@
                         name: "otherExposureRisk",
                         title: "Was the exposure of the other employees low risk or high risk?",
                         choices: [
-                            {value: 1, text: "Their exposure was low risk (e.g. contact < 20 mins, distance > 1.5m, wearing mask)"},
-                            {value: 2, text: "Their exposure was high risk (e.g. contact > 20 mins, distance < 1.5m, not wearing mask)"}
+                            {value: 1, text: "Their exposure was low risk (e.g. contact < 20 mins, distance > 1.5m, exposed with mask)"},
+                            {value: 2, text: "Their exposure was high risk (e.g. contact > 20 mins, distance < 1.5m, exposed without mask)"}
                         ],
                         visibleIf: "{youTested}=1"
                     },

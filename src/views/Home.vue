@@ -2,7 +2,7 @@
     <div class="container">
         <div class="col-lg-9 jumbotron">
             <h2>KKESH COVID-19 Procedure</h2>
-            <a type="button" class="btn btn-primary btn-lg btn-block" href="/staff">Click Here if you are a Staff Member who was Directly Exposed</a>
+            <a type="button" class="btn btn-primary btn-lg btn-block" href="/staff">Click Here if you are a KKESH employee and have a direct or indirect exposure to COVID-19 in the community</a>
         </div>
     </div>
 </template>
