@@ -13,13 +13,13 @@
     var Survey = SurveyVue.Survey
     Survey.cssType = "bootstrap";
 
-    const lessExposed = "<h4>You may need:</h4> <ol> <li>Continue duties</li> <li>No test is required</li> <li>Active monitoring for 14 days</li> </ol>"
-    const moreExposed = "<h4>You will be assessed by an EH physician. You may need:</h4> <ol> <li>Stop duties</li> <li>Test is required</li> <li>Isolation for 14 days</li> </ol>"
+    const lessExposed = "<h4>You may need to:</h4> <ol> <li>Continue duties</li> <li>No test is required</li> <li>Active monitoring for 14 days</li> </ol>"
+    const moreExposed = "<h4>You will be assessed by an EH physician. You may need to:</h4> <ol> <li>Stop duties</li> <li>Test is required</li> <li>Isolation for 14 days</li> </ol>"
 
 
-    const otherLessExposed1 = "<h4>The employee will be assessed by an EH physician. They may need:</h4> <ol> <li>Continue duties</li> <li>No test is required</li> <li>Active monitoring for 14 days</li> </ol>"
+    const otherLessExposed1 = "<h4>Those employees will be assessed by an EH physician. They may need to:</h4> <ol> <li>Continue duties</li> <li>No test is required</li> <li>Active monitoring for 14 days</li> </ol>"
     const otherLessExposed2 = "<h4>Those employees will need to:</h4> <ol> <li>Continue duties</li> <li>No test is required</li> <li>Active monitoring for 14 days</li> </ol>"
-    const otherMoreExposed = "<h4>The employee will be assessed by an EH physician. They may need:</h4> <ol> <li>Stop duties</li> <li>Test is required</li> <li>Isolation for 14 days</li> </ol>"
+    const otherMoreExposed = "<h4>Those employees will be assessed by an EH physician. They may need to:</h4> <ol> <li>Stop duties</li> <li>Test is required</li> <li>Isolation for 14 days</li> </ol>"
 
     export default {
         name: 'app',
@@ -42,7 +42,7 @@
                     },
                     {   type: "dropdown",
                         name: "firstTest",
-                        title: "What were the test results of the person you were exposed to?",
+                        title: "What was the test result of the person you were exposed to?",
                         choices: [
                             {value: 1, text: "Test Positive"},
                             {value: 2, text: "Test Negative"}
