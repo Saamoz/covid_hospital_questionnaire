@@ -29,7 +29,7 @@
                 questions: [
                     {   type: "dropdown",
                         name: "firstTest",
-                        title: "What were the test results of the person you were exposed to tested?",
+                        title: "What were the test results of the person you were exposed to?",
                         choices: [
                             {value: 1, text: "Test Positive"},
                             {value: 2, text: "Test Negative"}
