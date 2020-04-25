@@ -1,6 +1,6 @@
 <template>
     <div id="app">
-        <h2>Direct Exposure Questionnaire</h2>
+        <h2>Exposure Questionnaire</h2>
         <h4>Complete this if you were exposed to someone who was exposed to a confirmed case of COVID-19</h4>
         <survey :survey="survey"></survey>
     </div>
