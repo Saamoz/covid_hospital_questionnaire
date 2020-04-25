@@ -7,7 +7,7 @@
             <router-link to="/">Home</router-link>
           </li>
           <li>
-            <router-link to="/staff">Staff Direct Exposure Procedure</router-link>
+            <router-link to="/staff">Staff Exposure Procedure</router-link>
           </li>
         </ul>
       </div>
