@@ -13,9 +13,8 @@
     var Survey = SurveyVue.Survey
     Survey.cssType = "bootstrap";
 
-    const lessExposed = "<h4>Complete the following steps:</h4> <ol> <li>Continue duties</li> <li>No test is required</li> <li>Active monitoring for 14 days</li> </ol>"
-    // eslint-disable-next-line no-unused-vars
-    const moreExposed = "<h4>Complete the following steps:</h4> <ol> <li>Stop duties</li> <li>Test is required</li> <li>Isolation for 14 days</li> </ol>"
+    const lessExposed = "<h4>Most likely you will need to:</h4> <ol> <li>Continue duties</li> <li>No test is required</li> <li>Active monitoring for 14 days</li> </ol>"
+    const moreExposed = "<h4>You will be assessed by an EH physician. Most likely you will need to:</h4> <ol> <li>Stop duties</li> <li>Test is required</li> <li>Isolation for 14 days</li> </ol>"
 
     export default {
         name: 'app',
@@ -28,21 +27,32 @@
                 clearInvisibleValues: "onHidden",
                 questions: [
                     {   type: "dropdown",
+                        name: "testedOrNot",
+                        title: "Was the person you were exposed to tested?",
+                        description: "Remember that National ID is required by the IPC to retrieve a person's test results",
+                        choices: [
+                            {value: 1, text: "Yes, they were tested"},
+                            {value: 2, text: "No, they were not tested"}
+                        ]
+                    },
+                    {   type: "dropdown",
                         name: "firstTest",
                         title: "What were the test results of the person you were exposed to?",
                         choices: [
                             {value: 1, text: "Test Positive"},
                             {value: 2, text: "Test Negative"}
-                        ]
+                        ],
+                        visibleIf: "{testedOrNot}=1"
                     },
                     {   type: "dropdown",
                         name: "negativeSymptoms",
                         title: "Are you experiencing any symptoms?",
+                        description: "Symptoms may include fever, cough, or shortness of breadth",
                         choices: [
                             {value: 1, text: "Yes, I'm experiencing symptoms"},
-                            {value: 2, text: "Yes, I'm not experiencing symptoms"}
+                            {value: 2, text: "No, I'm not experiencing symptoms"}
                         ],
-                        visibleIf: "{firstTest}='2'"
+                        visibleIf: "{firstTest}='2' or {testedOrNot}=2"
                     },
                     {
                         type: "html",
@@ -58,7 +68,7 @@
                     },
                     {   type: "dropdown",
                         name: "exposureRisk",
-                        title: "Was your exposure low risk?",
+                        title: "Was your exposure low risk or high risk?",
                         choices: [
                             {value: 1, text: "My exposure was low risk (e.g. contact < 20 mins, distance > 1.5m, wearing mask)"},
                             {value: 2, text: "My exposure was high risk (e.g. contact > 20 mins, distance < 1.5m, not wearing mask)"}
