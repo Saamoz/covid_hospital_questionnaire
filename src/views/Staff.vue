@@ -13,13 +13,12 @@
     var Survey = SurveyVue.Survey
     Survey.cssType = "bootstrap";
 
-    const lessExposed = "<h4>You may need to:</h4> <ol> <li>Continue duties</li> <li>No test is required</li> <li>Active monitoring for 14 days</li> </ol>"
-    const moreExposed = "<h4>You will be assessed by an EH physician. You may need to:</h4> <ol> <li>Stop duties</li> <li>Test is required</li> <li>Isolation for 14 days</li> </ol>"
+    const lessExposed = "<h4>You will need to:</h4> <ol> <li>Continue duties</li> <li>No test is required</li> <li>Active monitoring for 14 days</li> </ol>"
+    const moreExposed = "<h4>You will be assessed by an EH physician. You will need to:</h4> <ol> <li>Stop duties</li> <li>Test is required</li> <li>Isolation for 14 days</li> </ol>"
 
 
-    const otherLessExposed1 = "<h4>Those employees will be assessed by an EH physician. They may need to:</h4> <ol> <li>Continue duties</li> <li>No test is required</li> <li>Active monitoring for 14 days</li> </ol>"
-    const otherLessExposed2 = "<h4>Those employees will need to:</h4> <ol> <li>Continue duties</li> <li>No test is required</li> <li>Active monitoring for 14 days</li> </ol>"
-    const otherMoreExposed = "<h4>Those employees will be assessed by an EH physician. They may need to:</h4> <ol> <li>Stop duties</li> <li>Test is required</li> <li>Isolation for 14 days</li> </ol>"
+    const otherLessExposed = "<h4>EH will contact the employee exposed to you. They will need to:</h4> <ol> <li>Continue duties</li> <li>No test is required</li> <li>Active monitoring for 14 days</li> </ol>"
+    const otherMoreExposed = "<h4>EH will contact the employee exposed to you. They will need to:</h4> <ol> <li>Stop duties</li> <li>Test is required</li> <li>Isolation for 14 days</li> </ol>"
     const completedHTML = "<h3>Thank you for completing the questionnaire, {name}</h3>"
 
     export default {
@@ -133,13 +132,19 @@
                         description: "Symptoms may include fever, cough, shortness of breath, nausea, or diarrhea",
                         choices: [
                             {value: "yes", text: "Yes, they show symptoms"},
-                            {value: "no", text: "No, they don't show any symptoms"}
+                            {value: "no", text: "No, they don't show any symptoms"},
+                            {value: "idk", text: "I don't know"}
                         ],
                         visibleIf: "{Are you tested}=no"
                     },
                     {
                         type: "html",
-                        html: otherLessExposed2,
+                        html: "<h3>EH will contact the employee exposed to you for assessment</h3>",
+                        visibleIf: "{Do exposed employees have symptoms}='idk'"
+                    },
+                    {
+                        type: "html",
+                        html: otherLessExposed,
                         visibleIf: "{Do exposed employees have symptoms}='no'"
                     },
                     {
@@ -163,7 +168,7 @@
                     },
                     {
                         type: "html",
-                        html: otherLessExposed1,
+                        html: otherLessExposed,
                         visibleIf: "{Exposure risk of other employees}='low risk'"
                     },
                 ]
