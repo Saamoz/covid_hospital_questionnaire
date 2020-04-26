@@ -1,7 +1,7 @@
 <template>
     <div id="app">
         <h2>Exposure Questionnaire</h2>
-        <h4>Complete this if you had direct or indirect exposure to COVID-19</h4>
+        <h4>Complete this if you had a direct or indirect exposure to COVID-19</h4>
         <survey :survey="survey"></survey>
     </div>
 </template>
