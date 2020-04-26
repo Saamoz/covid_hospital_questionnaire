@@ -114,7 +114,7 @@
                     },
                     {
                         type: "html",
-                        html: "<h3>Good Job. Make sure you follow the instructions above</h3>",
+                        html: "<h3>Thank you. Make sure you follow the instructions above</h3>",
                         visibleIf: "{Did they meet people}='no'"
                     },
                     {   type: "dropdown",
