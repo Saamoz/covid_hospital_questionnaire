@@ -116,7 +116,7 @@
                     {
                         type: "html",
                         html: "<h3>Good Job. Make sure you follow the instructions above</h3>",
-                        visibleIf: "{meetingPeople}='no'"
+                        visibleIf: "{Did they meet people}='no'"
                     },
                     {   type: "dropdown",
                         name: "Are you tested",
@@ -125,7 +125,7 @@
                             {value: "yes", text: "Yes, I'm tested"},
                             {value: "no", text: "No, I'm not tested"}
                         ],
-                        visibleIf: "{meetingPeople}=yes"
+                        visibleIf: "{Did they meet people}=yes"
                     },
                     {   type: "dropdown",
                         name: "Do exposed employees have symptoms",
