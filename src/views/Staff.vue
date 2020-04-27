@@ -16,9 +16,6 @@
     const lessExposed = "<h4>You will need to:</h4> <ol> <li>Continue duties</li> <li>No test is required</li> <li>Active monitoring for 14 days</li> </ol>"
     const moreExposed = "<h4>You will be assessed by an EH physician. You will need to:</h4> <ol> <li>Stop duties</li> <li>Test is required</li> <li>Isolation for 14 days</li> </ol>"
 
-
-    const otherLessExposed = "<h4>EH will contact the employee exposed to you. They will need to:</h4> <ol> <li>Continue duties</li> <li>No test is required</li> <li>Active monitoring for 14 days</li> </ol>"
-    const otherMoreExposed = "<h4>EH will contact the employee exposed to you. They will need to:</h4> <ol> <li>Stop duties</li> <li>Test is required</li> <li>Isolation for 14 days</li> </ol>"
     const completedHTML = "<h3>Thank you for completing the questionnaire, {name}</h3>"
 
     export default {
@@ -59,10 +56,16 @@
                         name: "What was the test result of the person you were exposed",
                         title: "What was the test result of the person you were exposed to?",
                         choices: [
-                            {value: "positive", text: "Test Positive"},
-                            {value: "negative", text: "Test Negative"}
+                            {value: "positive", text: "Test positive"},
+                            {value: "negative", text: "Test negative"},
+                            {value: "pending", text: "Test results are pending"}
                         ],
                         visibleIf: "{Was the person you were exposed to tested}=yes"
+                    },
+                    {
+                        type: "html",
+                        html: "<h3>Please maintain social distancing at work, wear mask, and perform hand hygiene</h3>",
+                        visibleIf: "{What was the test result of the person you were exposed}='pending'"
                     },
                     {   type: "dropdown",
                         name: "Experiencing symptoms",
@@ -105,7 +108,7 @@
                     },
                     {   type: "dropdown",
                         name: "Did they meet people",
-                        title: "After exposure did you mix with people at work?",
+                        title: "After exposure did you come into contact with people at work?",
                         choices: [
                             {value: "yes", text: "Yes, I mixed with people"},
                             {value: "no", text: "No, I did not mix with people"}
@@ -117,59 +120,10 @@
                         html: "<h3>Thank you. Make sure you follow the instructions above</h3>",
                         visibleIf: "{Did they meet people}='no'"
                     },
-                    {   type: "dropdown",
-                        name: "Are you tested",
-                        title: "Are you tested for COVID-19?",
-                        choices: [
-                            {value: "yes", text: "Yes, I'm tested"},
-                            {value: "no", text: "No, I'm not tested"}
-                        ],
-                        visibleIf: "{Did they meet people}=yes"
-                    },
-                    {   type: "dropdown",
-                        name: "Do exposed employees have symptoms",
-                        title: "Do other employees exposed to you have any symptoms?",
-                        description: "Symptoms may include fever, cough, shortness of breath, nausea, or diarrhea",
-                        choices: [
-                            {value: "yes", text: "Yes, they show symptoms"},
-                            {value: "no", text: "No, they don't show any symptoms"},
-                            {value: "idk", text: "I don't know"}
-                        ],
-                        visibleIf: "{Are you tested}=no"
-                    },
                     {
                         type: "html",
-                        html: "<h3>EH will contact the employee exposed to you for assessment</h3>",
-                        visibleIf: "{Do exposed employees have symptoms}='idk'"
-                    },
-                    {
-                        type: "html",
-                        html: otherLessExposed,
-                        visibleIf: "{Do exposed employees have symptoms}='no'"
-                    },
-                    {
-                        type: "html",
-                        html: otherMoreExposed,
-                        visibleIf: "{Do exposed employees have symptoms}='yes'"
-                    },
-                    {   type: "dropdown",
-                        name: "Exposure risk of other employees",
-                        title: "Was the exposure of the other employees low risk or high risk?",
-                        choices: [
-                            {value: "low risk", text: "Their exposure was low risk (e.g. contact < 20 mins, distance > 1.5m, exposed with mask)"},
-                            {value: "high risk", text: "Their exposure was high risk (e.g. contact > 20 mins, distance < 1.5m, exposed without mask)"}
-                        ],
-                        visibleIf: "{Are you tested}=yes"
-                    },
-                    {
-                        type: "html",
-                        html: otherMoreExposed,
-                        visibleIf: "{Exposure risk of other employees}='high risk'"
-                    },
-                    {
-                        type: "html",
-                        html: otherLessExposed,
-                        visibleIf: "{Exposure risk of other employees}='low risk'"
+                        html: "<h3>Please provide the names of the people you came in contact with.</h3>",
+                        visibleIf: "{Did they meet people}='yes'"
                     },
                 ]
             };
