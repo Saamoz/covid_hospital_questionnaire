@@ -62,11 +62,6 @@
                         ],
                         visibleIf: "{Was the person you were exposed to tested}=yes"
                     },
-                    {
-                        type: "html",
-                        html: "<h3>Please maintain social distancing at work, wear mask, and perform hand hygiene</h3><h4>EH will contact you once the result is available</h4>",
-                        visibleIf: "{What was the test result of the person you were exposed}='pending'"
-                    },
                     {   type: "dropdown",
                         name: "Experiencing symptoms",
                         title: "Are you experiencing any symptoms?",
@@ -75,7 +70,9 @@
                             {value: "yes", text: "Yes, I'm experiencing symptoms"},
                             {value: "no", text: "No, I'm not experiencing symptoms"}
                         ],
-                        visibleIf: "{What was the test result of the person you were exposed}='negative' or {Was the person you were exposed to tested}=no"
+                        visibleIf: "{What was the test result of the person you were exposed}='negative' or " +
+                            "{Was the person you were exposed to tested}=no " +
+                            "or {What was the test result of the person you were exposed}='pending'"
                     },
                     {
                         type: "html",
@@ -85,7 +82,12 @@
                     {
                         type: "html",
                         html: lessExposed,
-                        visibleIf: "{Experiencing symptoms}='no'"
+                        visibleIf: "{Experiencing symptoms}='no' and {What was the test result of the person you were exposed}='negative'"
+                    },
+                    {
+                        type: "html",
+                        html: "<h3>Please maintain social distancing at work, wear mask, and perform hand hygiene</h3><h4>EH will contact you once the result is available</h4>",
+                        visibleIf: "{Experiencing symptoms}='no' and {What was the test result of the person you were exposed}='pending'"
                     },
                     {   type: "dropdown",
                         name: "Exposure risk",
