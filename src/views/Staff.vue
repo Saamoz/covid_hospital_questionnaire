@@ -58,13 +58,13 @@
                         choices: [
                             {value: "positive", text: "Test positive"},
                             {value: "negative", text: "Test negative"},
-                            {value: "pending", text: "Test results are pending"}
+                            {value: "pending", text: "Test result is pending"}
                         ],
                         visibleIf: "{Was the person you were exposed to tested}=yes"
                     },
                     {
                         type: "html",
-                        html: "<h3>Please maintain social distancing at work, wear mask, and perform hand hygiene</h3>",
+                        html: "<h3>Please maintain social distancing at work, wear mask, and perform hand hygiene</h3><h4>EH will contact you once the result is available</h4>",
                         visibleIf: "{What was the test result of the person you were exposed}='pending'"
                     },
                     {   type: "dropdown",
