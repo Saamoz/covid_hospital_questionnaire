@@ -124,7 +124,7 @@
                     },
                     {
                         type: "html",
-                        html: "<h3>Please provide the names of the people you came in contact with.</h3>",
+                        html: "<h3>Please provide the names of the people you came in contact with. Thank you.</h3>",
                         visibleIf: "{Did they meet people}='yes'"
                     },
                 ]
