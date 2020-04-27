@@ -125,6 +125,7 @@
                     {
                         type: "comment",
                         name: "people who came in contact",
+                        title: "Please provide the names of the people you came in contact with",
                         visibleIf: "{Did they meet people}='yes'"
                     },
                 ]
