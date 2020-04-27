@@ -123,8 +123,8 @@
                         visibleIf: "{Did they meet people}='no'"
                     },
                     {
-                        type: "html",
-                        html: "<h3>Please provide the names of the people you came in contact with. Thank you.</h3>",
+                        type: "comment",
+                        name: "people who came in contact",
                         visibleIf: "{Did they meet people}='yes'"
                     },
                 ]
