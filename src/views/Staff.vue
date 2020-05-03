@@ -119,7 +119,7 @@
                     },
                     {
                         type: "html",
-                        html: "<h3>Thank you. Make sure you follow the instructions above</h3>",
+                        html: "<h3>Make sure you follow the instructions given by EH</h3>",
                         visibleIf: "{Did they meet people}='no'"
                     },
                     {
